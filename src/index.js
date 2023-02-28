@@ -1,6 +1,7 @@
 import "./style.scss";
 import sunnyDay from "./images/sunny.svg";
 import rainyDay from "./images/rainy.svg";
+import thunderstorm from "./images/thunderstorm.svg";
 import cloudyDay from "./images/cloudy.svg";
 import foggyDay from "./images/foggy.svg";
 
@@ -171,8 +172,6 @@ form.addEventListener("submit", async (e) => {
 
   const climaInfo = await consultaClima(pesquisaCep.localidade);
 
-  console.log(climaInfo);
-
   if (climaInfo == 0) {
     return;
   }
@@ -187,6 +186,9 @@ form.addEventListener("submit", async (e) => {
     case "Rain":
       climaImg.src = `${rainyDay}`;
       break;
+    case "Thunderstorm":
+      climaImg.src = `${thunderstorm}`;
+      break;
     case "Clouds":
       climaImg.src = `${cloudyDay}`;
       break;
@@ -200,10 +202,10 @@ form.addEventListener("submit", async (e) => {
   temperaturaAtual.innerHTML = `<strong>Atual:</strong> ${parseInt(
     climaInfo.main.temp
   )} °C`;
-  temperaturaMin.innerHTML = `<strong>Máxima:</strong> ${parseInt(
+  temperaturaMin.innerHTML = `<strong>Mínima:</strong> ${parseInt(
     climaInfo.main.temp_min
   )} °C`;
-  temperaturaMax.innerHTML = `<strong>Mínima:</strong> ${parseInt(
+  temperaturaMax.innerHTML = `<strong>Máxima:</strong> ${parseInt(
     climaInfo.main.temp_max
   )} °C`;
   humidade.innerHTML = `<strong>Humidade:</strong> ${climaInfo.main.humidity}%`;

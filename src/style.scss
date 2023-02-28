@@ -3,6 +3,10 @@
 * {
   font-family: "Roboto Mono", monospace;
   font-size: 1.2vmax;
+
+  @media screen and (max-width: 789px) {
+    font-size: 1.8vmax;
+  }
 }
 
 body {
@@ -15,9 +19,19 @@ body {
 
 main {
   display: flex;
+
+  @media screen and (max-width: 789px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 #l-mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 15px;
   padding: 35px;
   height: max-content;
@@ -34,17 +48,28 @@ input {
 .l-title {
   color: vars.$text-color;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 #l-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   input {
     all: unset;
     border: 5px vars.$border-color solid;
     margin: 15px 0;
     padding: 5px;
-    height: 40px;
+    height: 2vmax;
+    width: 100%;
     border-radius: 5px;
     background-color: #fff;
+
+    @media screen and (max-width: 789px) {
+      height: 3vmax;
+    }
   }
 
   #l-error {
@@ -98,15 +123,27 @@ input {
   display: none;
   width: 20vmax;
 
+  @media screen and (max-width: 789px) {
+    width: 100%;
+  }
+
   div {
     font-size: 0.8rem;
     font-weight: 500;
     margin: 5px;
     color: vars.$text-color;
+
+    @media screen and (max-width: 789px) {
+      font-size: 0.9rem;
+    }
   }
 
   strong {
     font-size: 0.8rem;
+
+    @media screen and (max-width: 789px) {
+      font-size: 0.9rem;
+    }
   }
 }
 
@@ -118,24 +155,37 @@ input {
   display: none;
   width: 20vmax;
 
+  @media screen and (max-width: 789px) {
+    width: 100%;
+  }
+
   div {
     font-size: 0.8rem;
     font-weight: 500;
     text-align: center;
     margin: 5px;
     color: vars.$text-color;
+
+    @media screen and (max-width: 789px) {
+      font-size: 0.9rem;
+    }
   }
 
   strong {
     font-size: 0.8rem;
+
+    @media screen and (max-width: 789px) {
+      font-size: 0.9rem;
+    }
   }
 
   figure {
     text-align: center;
     img {
+      width: 3vmax;
       background-color: #fff;
       padding: 15px;
-      border-radius: 35px;
+      border-radius: 15vmax;
     }
     figcaption {
       color: vars.$text-color;
@@ -144,19 +194,25 @@ input {
 }
 
 #l-themeToggle {
-  height: 8vh;
-  width: 5vw;
+  height: 2.5vmax;
+  width: 2.5vmax;
   margin-left: 15px;
-  border-radius: 35px;
+  border-radius: 15vmax;
   background-color: vars.$secundary-color;
   background-image: vars.$button-img;
   background-repeat: no-repeat;
   background-position: center;
-  object-fit: contain;
+  background-size: 3vmax;
+  padding: 15px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   &:hover {
     background-color: vars.$text-color;
+  }
+
+  @media screen and (max-width: 789px) {
+    margin: 0;
+    margin-bottom: 15px;
   }
 }
 

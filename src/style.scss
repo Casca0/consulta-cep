@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap");
+
+* {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.2vmax;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  background-color: vars.$background-color;
+}
+
+main {
+  display: flex;
+}
+
+#l-mainContent {
+  border-radius: 15px;
+  padding: 35px;
+  height: max-content;
+  width: max-content;
+  background-color: vars.$secundary-color;
+}
+
+#l-form,
+label,
+input {
+  display: block;
+}
+
+.l-title {
+  color: vars.$text-color;
+  font-size: 1.5rem;
+}
+
+#l-form {
+  input {
+    all: unset;
+    border: 5px vars.$border-color solid;
+    margin: 15px 0;
+    padding: 5px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+
+  #l-error {
+    position: relative;
+    background-color: #f96666;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    user-select: none;
+    display: none;
+    font-weight: bold;
+    color: #edf1d6;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      bottom: 100%;
+      left: 1em;
+      border: 0.55rem solid transparent;
+      border-top: none;
+      border-bottom-color: #f96666;
+    }
+  }
+
+  #l-submit {
+    display: block;
+    border: 5px vars.$border-color solid;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: ease-in-out 0.2s;
+    color: vars.$submit-text-color;
+    background-color: vars.$submit-background;
+    font-weight: 600;
+
+    &:hover {
+      background-color: vars.$border-color;
+    }
+  }
+}
+
+#l-cepInfo {
+  border: vars.$border-color 3px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 15px;
+  display: none;
+  width: 20vmax;
+
+  div {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 5px;
+    color: vars.$text-color;
+  }
+
+  strong {
+    font-size: 0.8rem;
+  }
+}
+
+#l-weatherBox {
+  border: vars.$border-color 3px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 15px;
+  display: none;
+  width: 20vmax;
+
+  div {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 5px;
+    color: vars.$text-color;
+  }
+
+  strong {
+    font-size: 0.8rem;
+  }
+
+  figure {
+    text-align: center;
+    img {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 35px;
+    }
+    figcaption {
+      color: vars.$text-color;
+    }
+  }
+}
+
+#l-themeToggle {
+  height: 8vh;
+  width: 5vw;
+  margin-left: 15px;
+  border-radius: 35px;
+  background-color: vars.$secundary-color;
+  background-image: vars.$button-img;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: contain;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    background-color: vars.$text-color;
+  }
+}
+
+.fadeIn {
+  animation: 0.5s fadeIn forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    scale: 0;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
